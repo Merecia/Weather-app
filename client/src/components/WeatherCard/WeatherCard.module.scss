@@ -11,7 +11,7 @@
     .Header {
         display: flex;
         justify-content:space-between;
-        margin: 20px 0px 30px 0px;
+        margin: 20px 0px 0px 0px;
 
         .Left, .Right {
             display: flex;
@@ -26,13 +26,25 @@
         }
     }
 
-    .Bottom {
-        .FeelsLike {
-            font-weight: bold;
-            border-radius: 10px;
-            border: 2px solid #1b1c1f;
-            padding: 3px;
-            margin-right: 5px;
+    .Score {
+        .Temperature {
+            margin: 15px 0px 30px 0px;
+            display: flex;
+            justify-content: space-between;
+            .Left {
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                border-radius: 10px;
+                border: 2px solid #1b1c1f;
+                margin-right: 5px;
+                max-width: 30%;
+                padding: 5px;
+            }
+            .Right {
+                display: block;
+                max-width: 70%;
+            }
         }
     }
 }

@@ -24,12 +24,16 @@ const WeatherCard = ({
                     />
                 </div>
             </div>
-            <div className={style.Bottom}>
-                <p> 
-                    <span className = {style.FeelsLike}> {feels_like}°С </span> 
-                    temperature from {temp_min}°С to {temp_max}°С 
-                </p>
-                <p> Wind: {wind_speed} m/s. Clouds: {clouds_percent} %, {pressure} hpa </p>
+            <div className={style.Score}>
+                <div className = {style.Temperature}> 
+                    <div className = {style.Left}> 
+                        {feels_like}°С 
+                    </div> 
+                    <div className = {style.Right}> 
+                        temperature from {temp_min}°С to {temp_max}°С 
+                    </div>
+                </div>
+                <div> Wind: {wind_speed} m/s. Clouds: {clouds_percent} %, {pressure} hpa </div>
             </div>
         </div>
     );
