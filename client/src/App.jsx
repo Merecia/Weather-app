@@ -3,19 +3,23 @@ import axios from 'axios';
 import style from './App.module.scss';
 import WeatherCard from './components/WeatherCard/WeatherCard';
 import SearchBar from './components/SearchBar/SearchBar';
+import Spinner from './components/Spinner/Spinner';
 
 const App = () => {
   const [city, setCity] = useState('');
   const [weatherInCities, setWeatherInCities] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const changeHandler = event => {
     setCity(event.target.value);
   }
 
   const loadWeatherData = () => {
+    setLoading(true);
     axios.get(`http://localhost:5000/weather/${city}`)
       .then(response => {
-        setWeatherInCities(response.data)
+        setWeatherInCities(response.data);
+        setLoading(false);
       });
   }
 
@@ -26,11 +30,16 @@ const App = () => {
   }
 
   const renderCardList = () => {
-    return weatherInCities.map(weatherInCity => renderCard(weatherInCity))
+    if (loading) {
+      return <Spinner />
+    } else {
+      return weatherInCities.map((weatherInCity, index) => renderCard(weatherInCity, index))
+    }
   };
 
-  const renderCard = weatherInCity => (
+  const renderCard = (weatherInCity, index) => (
     <WeatherCard
+      key = {index}
       icon={weatherInCity.icon}
       city={weatherInCity.city}
       country={weatherInCity.country}
