@@ -1,0 +1,38 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: #28292E;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.App {
+    height: 100vh;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.Header {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 40px 0px;
+}
+
+.Content {
+    width: 100%;
+    display: flex;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}

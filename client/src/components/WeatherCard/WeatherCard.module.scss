@@ -1,0 +1,38 @@
+.WeatherCard {
+    border: 1px solid black;
+    width: 350px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 0px 20px 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: linear-gradient(267.68deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.08) 100%);
+    color: white;
+
+    .Header {
+        display: flex;
+        justify-content:space-between;
+        margin: 20px 0px 30px 0px;
+
+        .Left, .Right {
+            display: flex;
+            align-items: center;
+            width: 45%;
+        }
+        .Left > img  {
+            margin-right: 10px;
+        }
+        .Right > img {
+            margin-left: 10px;
+        }
+    }
+
+    .Bottom {
+        .FeelsLike {
+            font-weight: bold;
+            border-radius: 10px;
+            border: 2px solid #1b1c1f;
+            padding: 3px;
+            margin-right: 5px;
+        }
+    }
+}
